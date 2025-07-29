@@ -1,0 +1,409 @@
+2025-07-13 20:39:22,543 - __main__ - ERROR - Error cargando modelos: [Errno 2] Unable to synchronously open file (unable to open file: name = 'car_price_model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+2025-07-13 20:40:08,707 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-13 20:40:08,868 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-13 20:40:08,883 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-13 20:40:08,883 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-13 20:40:08,887 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-13 20:40:08,935 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.224:5000
+2025-07-13 20:40:08,936 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-13 20:40:08,939 - werkzeug - INFO -  * Restarting with stat
+2025-07-13 20:40:18,390 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-13 20:40:18,422 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-13 20:40:18,425 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-13 20:40:18,425 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-13 20:40:18,428 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-13 20:40:18,442 - werkzeug - WARNING -  * Debugger is active!
+2025-07-13 20:40:18,450 - werkzeug - INFO -  * Debugger PIN: 906-156-352
+2025-07-13 20:41:33,027 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:41:33] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-13 20:41:39,005 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:41:39] "GET / HTTP/1.1" 200 -
+2025-07-13 20:42:15,461 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:42:15] "GET /health HTTP/1.1" 200 -
+2025-07-13 20:42:41,371 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:42:41] "GET /model-info HTTP/1.1" 200 -
+2025-07-13 20:43:20,936 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2014, 'mileage_kmpl': 8.17, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 4, 'brand': 'Honda', 'transmission': 'Manual', 'color': 'White', 'service_history': 'None', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:43:20,954 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:43:21,503 - __main__ - INFO - Predicción exitosa: $4606.08
+2025-07-13 20:43:21,504 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:43:21] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:43:42,338 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:43:42] "[31m[1mPOST /predict-batch HTTP/1.1[0m" 400 -
+2025-07-13 20:44:06,461 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:44:06,717 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:44:06,837 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:44:06] "POST /predict-batch HTTP/1.1" 200 -
+2025-07-13 20:45:02,048 - __main__ - INFO - Petición de predicción recibida: [{'make_year': 2014, 'mileage_kmpl': 8.17, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 4, 'brand': 'Honda', 'transmission': 'Manual', 'color': 'White', 'service_history': 'None', 'accidents_reported': 0, 'insurance_valid': 'Yes'}, {'make_year': 2014, 'mileage_kmpl': 8.17, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 4, 'brand': 'Honda', 'transmission': 'Manual', 'color': 'White', 'service_history': 'None', 'accidents_reported': 0, 'insurance_valid': 'Yes'}]
+2025-07-13 20:45:02,048 - __main__ - ERROR - Error en predicción: Campo requerido faltante: make_year
+2025-07-13 20:45:02,049 - __main__ - WARNING - Error de validación: Campo requerido faltante: make_year
+2025-07-13 20:45:02,049 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:02] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-13 20:45:12,199 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2014, 'mileage_kmpl': 8.17, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 4, 'brand': 'Honda', 'transmission': 'Manual', 'color': 'White', 'service_history': 'None', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:45:12,206 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:45:12,449 - __main__ - INFO - Predicción exitosa: $4606.08
+2025-07-13 20:45:12,450 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:12] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:45:52,209 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2021, 'mileage_kmpl': 10.2, 'engine_cc': 3000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'BMW', 'transmission': 'Automatic', 'color': 'Black', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:45:52,442 - __main__ - INFO - Predicción exitosa: $9691.96
+2025-07-13 20:45:52,443 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:52] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:45:55,878 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2021, 'mileage_kmpl': 10.2, 'engine_cc': 3000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'BMW', 'transmission': 'Automatic', 'color': 'Black', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:45:56,024 - __main__ - INFO - Predicción exitosa: $9691.96
+2025-07-13 20:45:56,025 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:56] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:45:57,138 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2021, 'mileage_kmpl': 10.2, 'engine_cc': 3000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'BMW', 'transmission': 'Automatic', 'color': 'Black', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:45:57,282 - __main__ - INFO - Predicción exitosa: $9691.96
+2025-07-13 20:45:57,283 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:57] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:45:58,536 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2021, 'mileage_kmpl': 10.2, 'engine_cc': 3000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'BMW', 'transmission': 'Automatic', 'color': 'Black', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:45:58,679 - __main__ - INFO - Predicción exitosa: $9691.96
+2025-07-13 20:45:58,681 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:45:58] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:46:16,886 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2018, 'mileage_kmpl': 14.5, 'engine_cc': 1800, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:46:17,029 - __main__ - INFO - Predicción exitosa: $7921.29
+2025-07-13 20:46:17,029 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:46:17] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:46:24,729 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2008, 'mileage_kmpl': 12.3, 'engine_cc': 1300, 'fuel_type': 'Petrol', 'owner_count': 3, 'brand': 'Chevrolet', 'transmission': 'Manual', 'color': 'Silver', 'service_history': 'None', 'accidents_reported': 2, 'insurance_valid': 'No'}
+2025-07-13 20:46:24,735 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:46:24,937 - __main__ - INFO - Predicción exitosa: $4211.37
+2025-07-13 20:46:24,937 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:46:24] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:46:27,668 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2008, 'mileage_kmpl': 12.3, 'engine_cc': 1300, 'fuel_type': 'Petrol', 'owner_count': 3, 'brand': 'Chevrolet', 'transmission': 'Manual', 'color': 'Silver', 'service_history': 'None', 'accidents_reported': 2, 'insurance_valid': 'No'}
+2025-07-13 20:46:27,671 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-13 20:46:27,803 - __main__ - INFO - Predicción exitosa: $4211.37
+2025-07-13 20:46:27,804 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:46:27] "POST /predict HTTP/1.1" 200 -
+2025-07-13 20:48:44,009 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1600, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Hyundai', 'transmission': 'Automatic', 'color': 'Gray', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 20:48:44,146 - __main__ - INFO - Predicción exitosa: $6812.69
+2025-07-13 20:48:44,146 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 20:48:44] "POST /predict HTTP/1.1" 200 -
+2025-07-13 21:00:39,212 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'engine_cc': 1600, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Hyundai', 'transmission': 'Automatic', 'color': 'Gray', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 21:00:39,212 - __main__ - ERROR - Error en predicción: Campo requerido faltante: mileage_kmpl
+2025-07-13 21:00:39,212 - __main__ - WARNING - Error de validación: Campo requerido faltante: mileage_kmpl
+2025-07-13 21:00:39,212 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:00:39] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-13 21:00:47,537 - __main__ - INFO - Petición de predicción recibida: {'mileage_kmpl': 16.5, 'engine_cc': 1600, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Hyundai', 'transmission': 'Automatic', 'color': 'Gray', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 21:00:47,538 - __main__ - ERROR - Error en predicción: Campo requerido faltante: make_year
+2025-07-13 21:00:47,538 - __main__ - WARNING - Error de validación: Campo requerido faltante: make_year
+2025-07-13 21:00:47,539 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:00:47] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-13 21:01:07,319 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1600, 'fuel_type': 'Petrol', 'brand': 'Hyundai', 'transmission': 'Automatic', 'color': 'Gray', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-13 21:01:07,319 - __main__ - ERROR - Error en predicción: Campo requerido faltante: owner_count
+2025-07-13 21:01:07,319 - __main__ - WARNING - Error de validación: Campo requerido faltante: owner_count
+2025-07-13 21:01:07,321 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:07] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-13 21:01:25,867 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1600, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Hyundai', 'transmission': 'Automatic', 'color': 'Gray', 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-13 21:01:25,868 - __main__ - ERROR - Error en predicción: Campo requerido faltante: accidents_reported
+2025-07-13 21:01:25,870 - __main__ - WARNING - Error de validación: Campo requerido faltante: accidents_reported
+2025-07-13 21:01:25,872 - werkzeug - INFO - 127.0.0.1 - - [13/Jul/2025 21:01:25] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-14 20:35:51,232 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:35:51,343 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:35:51,343 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:35:51,343 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:35:51,359 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:35:51,407 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.224:5000
+2025-07-14 20:35:51,407 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-14 20:35:51,407 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:35:59,287 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:35:59,324 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:35:59,326 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:35:59,326 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:35:59,329 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:35:59,363 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:35:59,373 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:36:49,428 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:36:50,268 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:36:50,271 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:36:50] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:19,419 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:19,625 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:19,627 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:19] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:20,188 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:20,332 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:20,333 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:20] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:20,773 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:20,897 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:20,898 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:20] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:21,738 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:21,872 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:21,873 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:21] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:22,355 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:22,477 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:22,478 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:22] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:23,275 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:23,459 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:23,460 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:23] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:23,888 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:24,009 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:24,010 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:24] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:24,395 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:24,514 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:24,514 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:24] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:25,177 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:25,322 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:25,323 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:25] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:25,385 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:44:25,507 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:25,509 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:25] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:25,563 - __main__ - INFO - Predicción exitosa: $8512.05
+2025-07-14 20:44:25,564 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:25] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:44:35,342 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:35,343 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:35] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:36,326 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:36,331 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:36] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:37,318 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:37,318 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:37] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:38,326 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:38,333 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:38] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:39,326 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:39,326 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:39] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:40,590 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:40,592 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:40] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:41,522 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:41,524 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:41] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:42,241 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:42,242 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:42] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:43,397 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:43,398 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:43] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:44,310 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:44,311 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:44] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:45,364 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:45,365 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:45] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:44:46,390 - flask-limiter - INFO - ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: predict
+2025-07-14 20:44:46,391 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:44:46] "[31m[1mPOST /predict HTTP/1.1[0m" 429 -
+2025-07-14 20:50:01,950 - werkzeug - INFO -  * Detected change in 'C:\\GitHub\\flask\\prediction-flask-api\\app.py', reloading
+2025-07-14 20:50:02,746 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:50:11,762 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:50:11,802 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:50:11,803 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:50:12,968 - __main__ - INFO - Linear model cargado con éxito
+2025-07-14 20:50:12,968 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:50:12,973 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:50:12,991 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:50:13,005 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:50:15,523 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:50:15,932 - __main__ - ERROR - Error en predicción: LinearModel.predict() got an unexpected keyword argument 'verbose'
+2025-07-14 20:50:15,932 - __main__ - ERROR - Error interno: LinearModel.predict() got an unexpected keyword argument 'verbose'
+2025-07-14 20:50:15,932 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:50:15] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-07-14 20:51:47,961 - werkzeug - INFO -  * Detected change in 'C:\\GitHub\\flask\\prediction-flask-api\\app.py', reloading
+2025-07-14 20:51:49,279 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:51:58,415 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:51:58,450 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:51:58,451 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:51:58,629 - __main__ - INFO - Linear model cargado con éxito
+2025-07-14 20:51:58,630 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:51:58,632 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:51:58,645 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:51:58,655 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:52:03,310 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:52:03,773 - __main__ - ERROR - Error en predicción: invalid index to scalar variable.
+2025-07-14 20:52:03,773 - __main__ - ERROR - Error interno: invalid index to scalar variable.
+2025-07-14 20:52:03,775 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:52:03] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-07-14 20:52:41,080 - werkzeug - INFO -  * Detected change in 'C:\\GitHub\\flask\\prediction-flask-api\\app.py', reloading
+2025-07-14 20:52:42,574 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:52:51,920 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:52:51,952 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:52:51,952 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:52:52,104 - __main__ - INFO - Linear model cargado con éxito
+2025-07-14 20:52:52,104 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:52:52,114 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:52:52,128 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:52:52,134 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:52:54,688 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:52:55,006 - __main__ - ERROR - Error interno: 'dict' object has no attribute 'keras'
+2025-07-14 20:52:55,008 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:52:55] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-07-14 20:53:56,787 - werkzeug - INFO -  * Detected change in 'C:\\GitHub\\flask\\prediction-flask-api\\app.py', reloading
+2025-07-14 20:53:58,309 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:54:07,340 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:54:07,373 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:54:07,375 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:54:07,535 - __main__ - INFO - Linear model cargado con éxito
+2025-07-14 20:54:07,536 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:54:07,539 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:54:07,552 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:54:07,562 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:54:11,447 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:54:11,798 - __main__ - ERROR - Error interno: unsupported format string passed to dict.__format__
+2025-07-14 20:54:11,799 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:54:11] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-07-14 20:56:24,828 - werkzeug - INFO -  * Detected change in 'C:\\GitHub\\flask\\prediction-flask-api\\app.py', reloading
+2025-07-14 20:56:26,099 - werkzeug - INFO -  * Restarting with stat
+2025-07-14 20:56:35,204 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-14 20:56:35,240 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-14 20:56:35,242 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-14 20:56:35,393 - __main__ - INFO - Linear model cargado con éxito
+2025-07-14 20:56:35,394 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-14 20:56:35,396 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-14 20:56:35,411 - werkzeug - WARNING -  * Debugger is active!
+2025-07-14 20:56:35,419 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-14 20:56:37,182 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:56:37,594 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:56:37] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:58:28,945 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 20:58:29,131 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:58:29] "POST /predict HTTP/1.1" 200 -
+2025-07-14 20:58:41,234 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 20:58:41] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-07-14 21:01:58,444 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:01:58,444 - __main__ - ERROR - Error en predicción: Cilindrada debe estar entre 500 y 8000 cc
+2025-07-14 21:01:58,445 - __main__ - WARNING - Error de validación: Cilindrada debe estar entre 500 y 8000 cc
+2025-07-14 21:01:58,446 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:01:58] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-14 21:03:10,257 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1000, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:03:10,258 - __main__ - ERROR - Error en predicción: Número de propietarios debe estar entre 1 y 10
+2025-07-14 21:03:10,259 - __main__ - WARNING - Error de validación: Número de propietarios debe estar entre 1 y 10
+2025-07-14 21:03:10,260 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:03:10] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-14 21:03:17,634 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 10, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:03:17,855 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:03:17] "POST /predict HTTP/1.1" 200 -
+2025-07-14 21:16:19,342 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:16:19] "GET / HTTP/1.1" 200 -
+2025-07-14 21:16:33,631 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:16:33] "GET / HTTP/1.1" 200 -
+2025-07-14 21:32:58,783 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:32:58] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-07-14 21:33:05,602 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 10, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 20, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:33:05,602 - __main__ - ERROR - Error en predicción: Número de accidentes debe estar entre 0 y 10
+2025-07-14 21:33:05,602 - __main__ - WARNING - Error de validación: Número de accidentes debe estar entre 0 y 10
+2025-07-14 21:33:05,602 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:33:05] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-14 21:33:13,656 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 10, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 10, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:33:13,877 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:33:13] "POST /predict HTTP/1.1" 200 -
+2025-07-14 21:33:26,514 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:33:26,719 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:33:26] "POST /predict HTTP/1.1" 200 -
+2025-07-14 21:33:35,168 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 10, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:33:35,369 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:33:35] "POST /predict HTTP/1.1" 200 -
+2025-07-14 21:33:47,239 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-14 21:33:47,434 - werkzeug - INFO - 127.0.0.1 - - [14/Jul/2025 21:33:47] "POST /predict HTTP/1.1" 200 -
+2025-07-15 20:35:23,132 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-15 20:35:23,280 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-15 20:35:23,280 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-15 20:35:24,089 - __main__ - INFO - Linear model cargado con éxito
+2025-07-15 20:35:24,089 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-15 20:35:24,089 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-15 20:35:24,137 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.224:5000
+2025-07-15 20:35:24,145 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-15 20:35:24,145 - werkzeug - INFO -  * Restarting with stat
+2025-07-15 20:35:30,486 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-15 20:35:30,514 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-15 20:35:30,514 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-15 20:35:30,642 - __main__ - INFO - Linear model cargado con éxito
+2025-07-15 20:35:30,642 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-15 20:35:30,642 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-15 20:35:30,662 - werkzeug - WARNING -  * Debugger is active!
+2025-07-15 20:35:30,667 - werkzeug - INFO -  * Debugger PIN: 123-451-530
+2025-07-15 20:38:15,350 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-15 20:38:15,683 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:38:15] "POST /predict HTTP/1.1" 200 -
+2025-07-15 20:38:21,968 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-15 20:38:22,045 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:38:22] "POST /predict HTTP/1.1" 200 -
+2025-07-15 20:38:31,270 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:38:31] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-07-15 20:39:50,889 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:39:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-15 20:39:54,384 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:39:54] "[31m[1mGET /predict HTTP/1.1[0m" 405 -
+2025-07-15 20:48:05,410 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-15 20:48:05,516 - werkzeug - INFO - 127.0.0.1 - - [15/Jul/2025 20:48:05] "POST /predict HTTP/1.1" 200 -
+2025-07-27 09:17:35,324 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-27 09:17:35,426 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-27 09:17:35,435 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-27 09:17:36,179 - __main__ - INFO - Linear model cargado con éxito
+2025-07-27 09:17:36,179 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-27 09:17:36,181 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-27 09:17:52,860 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-27 09:17:52,882 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-27 09:17:52,883 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-27 09:17:52,988 - __main__ - INFO - Linear model cargado con éxito
+2025-07-27 09:17:52,988 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-27 09:17:52,989 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-27 09:17:53,027 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.176:5000
+2025-07-27 09:17:53,027 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-27 09:17:53,029 - werkzeug - INFO -  * Restarting with stat
+2025-07-27 09:17:58,128 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-27 09:17:58,154 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-27 09:17:58,155 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-27 09:17:58,248 - __main__ - INFO - Linear model cargado con éxito
+2025-07-27 09:17:58,248 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-27 09:17:58,250 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-27 09:17:58,258 - werkzeug - WARNING -  * Debugger is active!
+2025-07-27 09:17:58,264 - werkzeug - INFO -  * Debugger PIN: 163-881-545
+2025-07-27 09:18:39,783 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:18:39] "[33mGET /api/v1/swagger-ui/index.html HTTP/1.1[0m" 404 -
+2025-07-27 09:18:40,041 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:18:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-27 09:20:11,222 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:20:11] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-27 09:20:57,365 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:20:57] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-27 09:21:48,135 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:21:48] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-27 09:23:20,714 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:23:20] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-27 09:23:22,245 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-27 09:23:22,585 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:23:22] "POST /predict HTTP/1.1" 200 -
+2025-07-27 09:23:25,205 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-27 09:23:25,284 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:23:25] "POST /predict HTTP/1.1" 200 -
+2025-07-27 09:23:34,538 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-27 09:23:34,657 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 09:23:34] "POST /predict HTTP/1.1" 200 -
+2025-07-27 10:47:11,100 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-27 10:47:11,255 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 10:47:11] "POST /predict HTTP/1.1" 200 -
+2025-07-27 11:39:54,213 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2015, 'mileage_kmpl': 16.5, 'engine_cc': 1500, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'White', 'service_history': 'Full', 'accidents_reported': 0, 'insurance_valid': 'Yes'}
+2025-07-27 11:39:54,417 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 11:39:54] "POST /predict HTTP/1.1" 200 -
+2025-07-27 11:41:36,372 - __main__ - ERROR - Error interno: 400 Bad Request: Failed to decode JSON object: Expecting property name enclosed in double quotes: line 12 column 1 (char 240)
+2025-07-27 11:41:36,374 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 11:41:36] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2025-07-27 11:41:53,316 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full'}
+2025-07-27 11:41:53,317 - __main__ - ERROR - Error en predicción: Campo requerido faltante: insurance_valid
+2025-07-27 11:41:53,317 - __main__ - WARNING - Error de validación: Campo requerido faltante: insurance_valid
+2025-07-27 11:41:53,318 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 11:41:53] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 14:53:47,545 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-27 14:53:47,653 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-27 14:53:47,663 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-27 14:53:48,452 - __main__ - INFO - Linear model cargado con éxito
+2025-07-27 14:53:48,453 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-27 14:53:48,455 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-27 14:53:48,504 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.224:5000
+2025-07-27 14:53:48,505 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-27 14:53:48,507 - werkzeug - INFO -  * Restarting with stat
+2025-07-27 14:53:54,142 - __main__ - INFO - Modelo TensorFlow cargado exitosamente
+2025-07-27 14:53:54,169 - __main__ - INFO - Scaler cargado exitosamente
+2025-07-27 14:53:54,171 - __main__ - INFO - Label encoders cargados exitosamente
+2025-07-27 14:53:54,278 - __main__ - INFO - Linear model cargado con éxito
+2025-07-27 14:53:54,278 - __main__ - INFO - Todos los modelos cargados correctamente
+2025-07-27 14:53:54,280 - __main__ - INFO - Iniciando servidor Flask...
+2025-07-27 14:53:54,289 - werkzeug - WARNING -  * Debugger is active!
+2025-07-27 14:53:54,295 - werkzeug - INFO -  * Debugger PIN: 163-881-545
+2025-07-27 14:53:57,583 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': None}
+2025-07-27 14:53:57,583 - __main__ - ERROR - Error en predicción: insurance_valid debe ser uno de: ['Yes', 'No']
+2025-07-27 14:53:57,583 - __main__ - WARNING - Error de validación: insurance_valid debe ser uno de: ['Yes', 'No']
+2025-07-27 14:53:57,583 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 14:53:57] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 15:10:25,823 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-27 15:10:26,646 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 15:10:26] "POST /predict HTTP/1.1" 200 -
+2025-07-27 15:25:40,868 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-27 15:25:41,007 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 15:25:41] "POST /predict HTTP/1.1" 200 -
+2025-07-27 15:27:29,075 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-27 15:27:29,197 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 15:27:29] "POST /predict HTTP/1.1" 200 -
+2025-07-27 15:46:39,651 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 20, 'service_history': 'Full', 'insurance_valid': 'Yes'}
+2025-07-27 15:46:39,652 - __main__ - ERROR - Error en predicción: Número de accidentes debe estar entre 0 y 10
+2025-07-27 15:46:39,652 - __main__ - WARNING - Error de validación: Número de accidentes debe estar entre 0 y 10
+2025-07-27 15:46:39,652 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 15:46:39] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 16:03:03,910 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Petrol', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'White', 'accidents_reported': 0, 'service_history': 'Full', 'insurance_valid': 'Ye'}
+2025-07-27 16:03:03,911 - __main__ - ERROR - Error en predicción: insurance_valid debe ser uno de: ['Yes', 'No']
+2025-07-27 16:03:03,911 - __main__ - WARNING - Error de validación: insurance_valid debe ser uno de: ['Yes', 'No']
+2025-07-27 16:03:03,912 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 16:03:03] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 16:17:55,790 - __main__ - INFO - Petición de predicción recibida: {'make_year': 0, 'mileage_kmpl': 0.0, 'engine_cc': 0, 'fuel_type': 'string', 'owner_count': 0, 'brand': 'string', 'transmission': 'string', 'color': 'string', 'accidents_reported': 0, 'service_history': 'string', 'insurance_valid': 'string'}
+2025-07-27 16:17:55,790 - __main__ - ERROR - Error en predicción: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:17:55,790 - __main__ - WARNING - Error de validación: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:17:55,791 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 16:17:55] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 16:18:30,337 - __main__ - INFO - Petición de predicción recibida: {'make_year': 0, 'mileage_kmpl': 0.0, 'engine_cc': 0, 'fuel_type': 'string', 'owner_count': 0, 'brand': 'string', 'transmission': 'string', 'color': 'string', 'accidents_reported': 0, 'service_history': 'string', 'insurance_valid': 'string'}
+2025-07-27 16:18:30,338 - __main__ - ERROR - Error en predicción: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:18:30,338 - __main__ - WARNING - Error de validación: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:18:30,338 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 16:18:30] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 16:19:20,315 - __main__ - INFO - Petición de predicción recibida: {'make_year': 0, 'mileage_kmpl': 0.0, 'engine_cc': 0, 'fuel_type': 'string', 'owner_count': 0, 'brand': 'string', 'transmission': 'string', 'color': 'string', 'accidents_reported': 0, 'service_history': 'string', 'insurance_valid': 'string'}
+2025-07-27 16:19:20,317 - __main__ - ERROR - Error en predicción: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:19:20,317 - __main__ - WARNING - Error de validación: Año de fabricación debe estar entre 1980 y 2025
+2025-07-27 16:19:20,317 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 16:19:20] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 17:05:41,066 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 17:05:41] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-07-27 17:05:44,402 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 17:05:44] "GET / HTTP/1.1" 200 -
+2025-07-27 17:05:50,950 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 17:05:50] "GET /model-info HTTP/1.1" 200 -
+2025-07-27 17:16:52,957 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2025, 'mileage_kmpl': 15.5, 'engine_cc': 2000, 'fuel_type': 'Diesel', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Red', 'accidents_reported': 0, 'service_history': 'None', 'insurance_valid': 'No'}
+2025-07-27 17:16:52,999 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-27 17:16:53,330 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 17:16:53] "POST /predict HTTP/1.1" 200 -
+2025-07-27 18:53:40,161 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2025, 'mileage_kmpl': 15.3, 'engine_cc': 1500, 'fuel_type': 'Diesel', 'owner_count': 2, 'brand': 'Hyundai', 'transmission': 'Manual', 'color': 'Black', 'accidents_reported': 1, 'service_history': 'Partial', 'insurance_valid': 'No'}
+2025-07-27 18:53:40,445 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 18:53:40] "POST /predict HTTP/1.1" 200 -
+2025-07-27 18:56:18,321 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 10.0, 'engine_cc': 1233, 'fuel_type': 'Electric', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Black', 'accidents_reported': 1, 'service_history': 'Partial', 'insurance_valid': 'Yes'}
+2025-07-27 18:56:18,410 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 18:56:18] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:02:42,219 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 10.0, 'engine_cc': 1233, 'fuel_type': 'Electric', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Black', 'accidents_reported': 1, 'service_history': 'Partial', 'insurance_valid': 'Yes'}
+2025-07-27 19:02:42,316 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:02:42] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:03:52,181 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2020, 'mileage_kmpl': 10.0, 'engine_cc': 1233, 'fuel_type': 'Electric', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Black', 'accidents_reported': 1, 'service_history': 'Partial', 'insurance_valid': 'Yes'}
+2025-07-27 19:03:52,262 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:03:52] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:12:53,768 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2010, 'mileage_kmpl': 12.3, 'engine_cc': 1500, 'fuel_type': 'Diesel', 'owner_count': 2, 'brand': 'Toyota', 'transmission': 'Manual', 'color': 'Black', 'accidents_reported': 0, 'service_history': 'None', 'insurance_valid': 'No'}
+2025-07-27 19:12:53,771 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-27 19:12:53,854 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:12:53] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:15:16,635 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2002, 'mileage_kmpl': 10.2, 'engine_cc': 1500, 'fuel_type': 'Electric', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Red', 'accidents_reported': 0, 'service_history': 'Partial', 'insurance_valid': 'No'}
+2025-07-27 19:15:16,718 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:15:16] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:18:41,799 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:18:41] "GET / HTTP/1.1" 200 -
+2025-07-27 19:18:46,942 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2002, 'mileage_kmpl': 10.2, 'engine_cc': 1500, 'fuel_type': 'Electric', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Red', 'accidents_reported': 0, 'service_history': 'Partial', 'insurance_valid': 'No'}
+2025-07-27 19:18:47,038 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:18:47] "POST /predict HTTP/1.1" 200 -
+2025-07-27 19:28:08,566 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2013, 'mileage_kmpl': 10.2, 'engine_cc': 1300, 'fuel_type': 'Hybrid', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'CVT', 'color': 'Silver', 'accidents_reported': 0, 'service_history': 'None', 'insurance_valid': 'No'}
+2025-07-27 19:28:08,566 - __main__ - ERROR - Error en predicción: transmission debe ser uno de: ['Manual', 'Automatic']
+2025-07-27 19:28:08,566 - __main__ - WARNING - Error de validación: transmission debe ser uno de: ['Manual', 'Automatic']
+2025-07-27 19:28:08,567 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:28:08] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2025-07-27 19:28:23,845 - __main__ - INFO - Petición de predicción recibida: {'make_year': 2013, 'mileage_kmpl': 10.2, 'engine_cc': 1300, 'fuel_type': 'Hybrid', 'owner_count': 1, 'brand': 'Toyota', 'transmission': 'Automatic', 'color': 'Silver', 'accidents_reported': 0, 'service_history': 'None', 'insurance_valid': 'No'}
+2025-07-27 19:28:23,847 - __main__ - WARNING - Valor no reconocido para fuel_type: Hybrid
+2025-07-27 19:28:23,849 - __main__ - WARNING - Valor no reconocido para service_history: None
+2025-07-27 19:28:23,959 - werkzeug - INFO - 127.0.0.1 - - [27/Jul/2025 19:28:23] "POST /predict HTTP/1.1" 200 -

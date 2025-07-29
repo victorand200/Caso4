@@ -1,0 +1,147 @@
+# 🚗 API de Predicción de Precios de Autos Usados
+
+Una API REST segura y escalable para predecir precios de automóviles usados usando TensorFlow y Flask.
+
+## 📋 Características
+
+- **Predicción Individual**: Predice el precio de un auto específico
+- **Predicción en Lote**: Procesa múltiples vehículos simultáneamente
+- **Validación Robusta**: Validación completa de datos de entrada
+- **Rate Limiting**: Limitación de peticiones para prevenir abuso
+- **Logging**: Sistema de logs completo para monitoreo
+- **CORS**: Habilitado para peticiones desde frontend
+- **Docker**: Listo para contenedorización
+- **Seguridad**: Implementación de mejores prácticas de seguridad
+
+## 🛠️ Instalación
+
+### Requisitos Previos
+
+- Python 3.9+
+- Archivos del modelo entrenado:
+  - `car_price_model.h5`
+  - `scaler.pkl`
+  - `label_encoders.pkl`
+
+### Instalación Local
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone <tu-repo>
+   cd car-price-api
+   ```
+
+2. **Crear entorno virtual**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
+   ```
+
+3. **Instalar dependencias**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Colocar archivos del modelo**
+   ```
+   car-price-api/
+   ├── app.py
+   ├── car_price_model.h5
+   ├── scaler.pkl
+   ├── label_encoders.pkl
+   └── requirements.txt
+   ```
+
+5. **Ejecutar la aplicación**
+   ```bash
+   python app.py
+   ```
+
+### Instalación con Docker
+
+1. **Construir la imagen**
+   ```bash
+   docker build -t car-price-api .
+   ```
+
+2. **Ejecutar el contenedor**
+   ```bash
+   docker run -p 5000:5000 car-price-api
+   ```
+
+## 🌐 Endpoints
+
+### `GET /`
+Información general de la API
+
+### `GET /health`
+Verificación de salud del servicio
+
+### `GET /model-info`
+Información detallada del modelo y parámetros aceptados
+
+### `POST /predict`
+Predicción individual de precio
+
+**Ejemplo de petición:**
+```json
+{
+  "make_year": 2020,
+  "mileage_kmpl": 15.5,
+  "engine_cc": 2000,
+  "fuel_type": "Petrol",
+  "owner_count": 1,
+  "brand": "Toyota",
+  "transmission": "Automatic",
+  "color": "White",
+  "service_history": "Full",
+  "accidents_reported": 0,
+  "insurance_valid": "Yes"
+}
+```
+
+**Ejemplo de respuesta:**
+```json
+{
+  "success": true,
+  "predicted_price_usd": 18750.25,
+  "input_data": { ... },
+  "timestamp": "2025-07-13T10:30:00",
+  "model_version": "1.0.0"
+}
+```
+
+### `POST /predict-batch`
+Predicción en lote (máximo 100 vehículos)
+
+**Ejemplo de petición:**
+```json
+[
+  {
+    "make_year": 2020,
+    "mileage_kmpl": 15.5,
+    // ... otros campos
+  },
+  {
+    "make_year": 2018,
+    "mileage_kmpl": 12.0,
+    // ... otros campos
+  }
+]
+```
+
+## 📊 Parámetros de Entrada
+
+| Campo | Tipo | Descripción | Valores Válidos |
+|-------|------|-------------|----------------|
+| `make_year` | int | Año de fabricación | 1980-2025 |
+| `mileage_kmpl` | float | Millaje en km/l | 0-50 |
+| `engine_cc` | int | Cilindrada en cc | 500-8000 |
+| `fuel_type` | string | Tipo de combustible | Petrol, Diesel, Electric, Hybrid |
+| `owner_count` | int | Número de propietarios | 1-10 |
+| `brand` | string | Marca del vehículo | Toyota, Honda, BMW, etc. |
+| `transmission` | string | Tipo de transmisión | Manual, Automatic |
+| `color` | string | Color del vehículo | White, Black, Silver, etc. |
+| `service_history` | string | Historial de servicio | Full, Partial, None |
+| `accidents_reported` | int | Accidentes reportados | 0-10 |
+| `insurance_valid` | string | Seguro vigente | Yes, No |

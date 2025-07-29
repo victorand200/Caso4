@@ -1,0 +1,105 @@
+<div
+    class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Crear cuenta
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600">
+                O
+                <a (click)="goToLogin()" class="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
+                    inicia sesión aquí
+                </a>
+            </p>
+        </div>
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
+            <div class="rounded-md shadow-sm space-y-4">
+                <!-- Nombre -->
+                <div>
+                    <input formControlName="nombre" type="text" placeholder="Nombre"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="registerForm.get('nombre')?.invalid && registerForm.get('nombre')?.touched" />
+                    @if (registerForm.get('nombre')?.invalid && registerForm.get('nombre')?.touched) {
+                    <div class="mt-1 text-sm text-red-600">
+                        El nombre es requerido
+                    </div>
+                    }
+                </div>
+
+                <!-- Apellido -->
+                <div>
+                    <input formControlName="apellido" type="text" placeholder="Apellido"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="registerForm.get('apellido')?.invalid && registerForm.get('apellido')?.touched" />
+                    @if (registerForm.get('apellido')?.invalid && registerForm.get('apellido')?.touched) {
+                    <div class="mt-1 text-sm text-red-600">
+                        El apellido es requerido
+                    </div>
+                    }
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <input formControlName="email" type="email" placeholder="Correo electrónico"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" />
+                    @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+                    <div class="mt-1 text-sm text-red-600">
+                        @if (registerForm.get('email')?.errors?.['required']) {
+                        <span>El email es requerido</span>
+                        }
+                        @if (registerForm.get('email')?.errors?.['email']) {
+                        <span>Ingresa un email válido</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <!-- Contraseña -->
+                <div>
+                    <input formControlName="password" type="password" placeholder="Contraseña"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" />
+                    @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched ||
+                    registerForm.get('password')?.errors?.['minlength']) {
+                    <div class="mt-1 text-sm text-red-600">
+                        La contraseña debe tener al menos 6 caracteres
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" [disabled]="registerForm.invalid || isLoading"
+                    class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-200">
+                    @if (!isLoading) {
+                    <span>Registrarse</span>
+                    }
+                    @if (isLoading) {
+                    <span class="flex items-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                        Registrando...
+                    </span>
+                    }
+                </button>
+            </div>
+
+            <!-- Mensaje de éxito/error -->
+             @if (message) {
+                 <div class="rounded-md p-4" [class.bg-green-50]="messageType === 'success'"
+                     [class.bg-red-50]="messageType === 'error'" [class.text-green-800]="messageType === 'success'"
+                     [class.text-red-800]="messageType === 'error'">
+                     {{ message }}
+                 </div>
+             }
+        </form>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div
+    class="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Iniciar sesión
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600">
+                O
+                <a (click)="goToRegister()" class="font-medium text-purple-600 hover:text-purple-500 cursor-pointer">
+                    crea una cuenta nueva
+                </a>
+            </p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
+            <div class="rounded-md shadow-sm space-y-4">
+                <!-- Email -->
+                <div>
+                    <input formControlName="email" type="email" placeholder="Correo electrónico"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" />
+
+                    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                    <div class="mt-1 text-sm text-red-600">
+                        @if (loginForm.get('email')?.errors?.['required']) {
+                        <span>El email es requerido</span>
+                        }
+                        @if (loginForm.get('email')?.errors?.['email']) {
+                        <span>Ingresa un email válido</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <!-- Contraseña -->
+                <div>
+                    <input formControlName="password" type="password" placeholder="Contraseña"
+                        class="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm transition duration-200"
+                        [class.border-red-500]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" />
+                    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                    <div class="mt-1 text-sm text-red-600">
+                        La contraseña es requerida
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" [disabled]="loginForm.invalid || isLoading"
+                    class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-200">
+                    @if (!isLoading) {
+                    <span>Iniciar sesión</span>
+                    }
+                    @if (isLoading) {
+                    <span class="flex items-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                        Iniciando sesión...
+                    </span>
+                    }
+                </button>
+            </div>
+
+            <!-- Mensaje de éxito/error -->
+            @if (message) {
+            <div class="rounded-md p-4" [class.bg-green-50]="messageType === 'success'"
+                [class.bg-red-50]="messageType === 'error'" [class.text-green-800]="messageType === 'success'"
+                [class.text-red-800]="messageType === 'error'">
+                {{ message }}
+            </div>
+            }
+        </form>
+
+        <!-- Divider -->
+        <div class="mt-6">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
